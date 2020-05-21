@@ -10,10 +10,34 @@ class App extends Component {
       result:'',
     }
   }
+  // basic operations
+  calculate = () =>{
+    try{
+      this.setState({
+        result: (eval(this.state.result) || "") + ""
+      })
+    }catch(e){
+      this.setState({
+        result: "error",
+      })
+    }
+  };
+
+  reset = () =>{
+    this.setState({
+      result:"",
+    })
+  };
+
+  backSpace = () =>{
+    this.setState({
+      result: this.state.result.slice('0 , -1')
+    })
+  };
   render() { 
     return (
       <div>
-        <div className="calculator">
+        <div className="calculator-body">
           <h1>Simple Calculator</h1>
           <Results result={this.state.result}/>
           <Buttons onClick={this.onClick}/>
