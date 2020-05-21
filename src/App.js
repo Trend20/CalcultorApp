@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Results from './components/Result';
 import Buttons from './components/Buttons';
+import './App.css';
  
 class App extends Component {
   constructor(props){
